@@ -1,0 +1,35 @@
+/*
+Kate Hartman
+ Creation & Computation
+ Fall 2013
+ Draw Grid
+ 
+ This example draws a grid and prints the mouse coordinates in the console.
+ */
+
+void setup() {
+  size(600, 600);
+  background(255);
+}
+
+void draw() {
+  drawGrid(200, 10);
+  printMouseCoordinates();
+}
+
+void drawGrid(int lineColor, int lineIncrement) {
+  stroke(lineColor);
+  for (int x = 0; x<= width; x+=lineIncrement) {
+    line(x, 0, x, height);
+  }
+
+  for (int y = 0; y<= height; y+=lineIncrement) {
+    line(0, y, width, y);
+  }
+}
+
+void printMouseCoordinates() {
+  print(mouseX);
+  print(", ");
+  println(mouseY);
+}
